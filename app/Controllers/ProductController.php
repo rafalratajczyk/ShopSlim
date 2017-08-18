@@ -27,6 +27,8 @@ class ProductController
             return $response->withRedirect($router->pathFor('home'));
         }
 
-        return $this->view->render($response, 'products/product.twig');
+        return $this->view->render($response, 'products/product.twig', [
+            'product' => $product,
+        ]);
     }
 }
